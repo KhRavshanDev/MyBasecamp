@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+<%= render @project %>
+
+  <br/>
+  <br/>
+<div>
+  <%= link_to "Edit this project", edit_project_path(@project) %> |
+  <%= link_to "Back to projects", projects_path %> <br/>
+
+  <br/>
+  <%= button_to "Destroy this project", @project, class:"btn btn-danger btn-hover", method: :delete %>
+</div>
+
+</div>
+</div>

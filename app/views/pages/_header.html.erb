@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #651FFF; color: white">
+  <%= link_to 'Basecamp', root_path, class:"navbar-brand" %>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+    <li class="nav-item">
+        <%= link_to "About Us", pages_about_path, class:"nav-link" %>
+      </li>
+
+
+<% if current_user %>
+
+    <li class="nav-item">
+    <%= link_to "New Project", projects_path, class:"nav-link" %>
+    </li>
+
+    <li class="nav-item">
+          <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link" %>
+    </li>
+
+    <div class="button">
+    <li class="nav-item">
+     <%= button_to "Log Out", destroy_user_session_path, class:"btn btn-danger me-md-2 btn-hover", method: :delete %>
+    </li>
+    </div>
+    
+    
+
+    <% else %>
+
+    <%= link_to "Sign up", new_user_registration_path, class:"nav-link nav-link-primary"  %>
+    </li>
+
+    <li class="nav-item">
+    <%= link_to "Login", new_user_session_path, class:"nav-link" %>
+    </li>
+
+
+<% end %>
+
+    
+
+</ul>
+</div>
+</nav>
